@@ -15,6 +15,11 @@
                 <h2>{{ $report->number }}</h2>
                 <p>{{ $report->description }}</p>
                 <p>Дата создания: {{ $report->created_at }}</p>
+                <form method="POST" action="{{ route('reports.destroy', $report->id) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Удалить</button>
+                </form>
             </div>
         @endforeach
     </main>
