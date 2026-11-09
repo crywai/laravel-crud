@@ -36,4 +36,25 @@ class ReportController extends Controller
 
         return redirect()->route('reports.index');
     }
+
+    public function edit(Report $report)
+    {
+        return view('report.edit', compact('report'));
+    }
+
+    public function update(Request $request, Report $report)
+    {
+        $data = $request->validate([
+            'number' => 'required|string|max:255',
+            'description' => 'required|string',
+        ], [
+            'number.required' => 'Введите номер автомобиля.',
+            'number.max' => 'Номер автомобиля слишком длинный.',
+            'description.required' => 'Введите описание нарушения.',
+        ]);
+
+        $report->update($data);
+
+        return redirect()->route('reports.index');
+    }
 }

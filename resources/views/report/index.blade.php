@@ -16,6 +16,7 @@
                 <h2>{{ $report->number }}</h2>
                 <p>{{ $report->description }}</p>
                 <p>Дата создания: {{ $report->created_at }}</p>
+                <p><a href="{{ route('reports.edit', $report->id) }}">Редактировать</a></p>
                 <form method="POST" action="{{ route('reports.destroy', $report->id) }}">
                     @csrf
                     @method('DELETE')
