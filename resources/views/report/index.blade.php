@@ -10,6 +10,7 @@
     <header>Нарушений нет</header>
     <main>
         <h1>Список заявлений</h1>
+        <p><a href="{{ route('reports.create') }}">Создать заявление</a></p>
         @foreach ($reports as $report)
             <div class="report">
                 <h2>{{ $report->number }}</h2>

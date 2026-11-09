@@ -31,3 +31,21 @@ footer {
     padding: 20px;
     font-size: 14px;
 }
+
+input, textarea {
+    width: 100%;
+    max-width: 600px;
+    box-sizing: border-box;
+    padding: 8px;
+    font: inherit;
+}
+
+button {
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+.error {
+    display: block;
+    color: #b22222;
+}
